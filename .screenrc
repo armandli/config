@@ -1,0 +1,23 @@
+sorendition "kg"
+autodetach on
+altscreen on
+defmonitor off
+vbell off
+vbell_msg 'Ding Ding'
+activity 'Activity in window %~'
+bell 'Bell at window %~'
+startup_message off
+defscrollback 300000
+ignorecase on
+shell bash
+
+activity "act in %n (%t) [%w:%s]~"
+
+hardstatus alwayslastline 
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]' 
+# Default screens 
+screen -t shell1 0
+screen -t shell2 1 
+screen -t shell3 2 
+screen -t shell3 3
+screen -t shell3 4

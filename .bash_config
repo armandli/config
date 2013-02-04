@@ -1,0 +1,34 @@
+#append to history file, not overwrite it
+shopt -s histappend
+
+#make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+#QSTK
+#[[ -s "$HOME/bin/qstk_src.sh" ]] && source "$HOME/bin/qstk_src.sh"
+
+#CONFIG: set custom PATH
+
+# set terminal prompt
+#PS1="\e[0;35m\h:\W \u|\$?\$ \e[m"
+PS1="\h:\W|$?\$ "
+#PS1="\h:\W \u|$?\$ "
+# PS1 COLOR GUIDE:
+# Black 0;30
+# Blue 0:34
+# Green 0;32
+# Cyan 0;36
+# Red 0;31
+# Purple 0;35
+# Brown 0;33
+# NOTE: change background, use \e[<COLOR>m and \e[0m
+
+if [ -f ~/.bash_aliases ]; then
+  . ~/.bash_aliases
+fi
+
+#allow cd <file> <cmd>
+if [ -f ~/bin/cd.sh ]; then
+  . ~/bin/cd.sh
+fi
+
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

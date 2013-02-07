@@ -13,8 +13,15 @@ shell bash
 
 activity "act in %n (%t) [%w:%s]~"
 
+# terminfo and termcap for nice 256 terminal
+# allow bold colors
+attrcolor b ".I"
+#erase background with current bg colour
+defbce on
+
 hardstatus alwayslastline 
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]' 
+
 # Default screens 
 screen -t shell1 0
 screen -t shell2 1 

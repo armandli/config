@@ -42,7 +42,7 @@ ca Q q
 
 """display preference"""
 set bg=dark                      "dark background
-colorscheme relaxedgreen         "set vim theme NOTE: need to download additional theme
+"colorscheme relaxedgreen         "set vim theme NOTE: need to download additional theme
                                  "plugin package
 
 """backup related preferences - keep 0 backups"""

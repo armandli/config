@@ -20,13 +20,12 @@ PS1="\h:\W|$?\$ "
 # Brown 0;33
 # NOTE: change background, use \e[<COLOR>m and \e[0m
 
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
-fi
+[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
 #allow cd <file> <cmd>
-if [ -f ~/bin/cd.sh ]; then
-  . ~/bin/cd.sh
-fi
+[[ -f ~/bin/cd.sh ]] && . ~/bin/cd.sh
+
+#allow ssh host autocomplete
+[[ -f ~/bin/ssh_autoc ]] && . ~/bin/ssh_autoc
 
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

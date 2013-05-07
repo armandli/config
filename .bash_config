@@ -28,4 +28,4 @@ PS1="\h:\W|$?\$ "
 #allow ssh host autocomplete
 [[ -f ~/bin/ssh_autoc ]] && . ~/bin/ssh_autoc
 
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export EDITOR=vim

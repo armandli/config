@@ -24,12 +24,9 @@ PS1="\h:\W|\${?##0}\$ "
 
 #allow cd <file> <cmd>
 [[ -f ~/bin/cd.sh ]] && . ~/bin/cd.sh
-<<<<<<< HEAD
-=======
 
 #allow ssh host autocomplete
 [[ -f ~/bin/ssh_autoc ]] && . ~/bin/ssh_autoc
->>>>>>> f91d4d1033d6282ff5fef3fa7f59fce315a668e4
 
 #allow ssh host autocomplete
 [[ -f ~/bin/ssh_autoc ]] && . ~/bin/ssh_autoc

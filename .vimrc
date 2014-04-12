@@ -5,12 +5,15 @@ set expandtab                    "use space instead of tabs for indentation
 set number                       "show line number on the left
 set showmatch                    "show matching braces
 set showcmd                      "show visual command selection
-set nocompatible                 "use non-compatible features.. not sure what this does
+set nocompatible                 "use non-compatible features
+set wildmenu                     "enhance command line completion
 set backspace=indent,eol,start   "backspace can go back to previous line, this may not
                                  "always be a good idea when editing large
                                  "files
 set wildchar=<Tab>               "expand command line using tab
-set history=100                  "remember previous 500 commands
+set splitbelow                   "more natural horizontal split
+set splitright                   "more natural vertical split
+set history=100                  "remember previous 100 commands
 set undolevels=50                "set maximum number of undos
 set autoread                     "automatically read updates from other editor editing
                                  "the same file
@@ -44,6 +47,11 @@ ca Q q
 set bg=dark                      "dark background
 "colorscheme relaxedgreen         "set vim theme NOTE: need to download additional theme
                                  "plugin package
+set t_Co=256                     "use vim with colour
+
+"""character encoding preference"""
+set encoding=utf8
+set termencoding=utf-8
 
 """backup related preferences - keep 0 backups"""
 set nobackup
@@ -58,7 +66,7 @@ set ignorecase                   "search ignores case
 """auto indentation preferences"""
 set autoindent    "guess indentation
 set smartindent   "a smarter indentation
-set shiftwidth=2 "set autoindent uses 2 characters, matching tabstop
+set shiftwidth=2  "set autoindent uses 2 characters, matching tabstop
 
 """ enable file specific indentation and plugin
 filetype plugin on
@@ -76,15 +84,73 @@ set t_vb=
 set tm=500
 autocmd GUIEnter * set visualbell t_vb=
 
-"""setting the status line for vim"""
+"""setting the old status line for vim"""
 " return current working directory
 function! CurDir()
   "NOTE: replace $HOME with the content of your home directory
-  let curdir = substitute(getcwd(), '$HOME', "~/", "g")
+  let curdir = substitute(getcwd(), '/home/armandli', "~", "g")
   return curdir
 endfunction
 set statusline=%F%m%r%h%w\ [%r%{CurDir()}%h]\ [TYPE=%Y][ASCII=\%03.3b][HEX=\%02.2B][POS=%04l,%04v][LEN=%L]
 set laststatus=2
 
-""" enable/disable tagbar
+""" vim airline setup """
+"let g:airline_powerline_fonts = 1
+"let g:airline_mode_map = {
+"  \ '__' : '-',
+"  \ 'n'  : 'N',
+"  \ 'i'  : 'I',
+"  \ 'R'  : 'R',
+"  \ 'c'  : 'C',
+"  \ 'v'  : 'V',
+"  \ 'V'  : 'V',
+"  \ '' : 'V',
+"  \ 's'  : 'S',
+"  \ 'S'  : 'S',
+"  \ '' : 'S',
+"  \ }
+"let g:airline#extensions#default#layout = [
+"  \ [ 'a', 'b', 'c' ],
+"  \ [ 'x', 'y', 'z' ]
+"  \ ]
+"let g:airline#extensions#default#section_truncate_width = {}
+"let g:airline_section_y = '0x%02.2B'
+"let g:airline_theme='bubblegum'
+
+""" enable/disable NERDTree """
+"nmap <F6> :NERDTree<CR>
+
+""" enable/disable TagList """
+"nmap <F7> :TlistToggle<CR>
+
+""" enable/disable tagbar """
 "nmap <F8> :TagbarToggle<CR>
+
+""" Vundle setup """
+"filetype off
+"set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc()
+"Plugin 'gmarik/vundle'
+""other plugins
+"Plugin 'bling/vim-airline'
+""Plugin 'Valloric/YouCompleteMe'
+"filetype plugin indent on
+
+""""" Reminders on must-have vim plugins """""
+" vim-a     : quick switcher between source and header file using :AS :AV
+" vim-align : automatically align lines based on character, e.g. :1,2Align =
+" vim mini-buffer explorer : :BufExplorer or :BufExplorerVerticalSplit
+" vim surround : switch surrounding of text with different character, e.g.
+"                cs'<q> -> change surrounding charater from ' to <q>
+"                ds" -> remove surrounding character "
+"                cst" -> change surrounding tag to "
+"                ysiw] -> sourrnding curent word with []
+"                yss) -> sourrnding entire line in ()
+" vim snippet : generates snippet code with keyword + <tab> + <c-j> for
+"               switching between components of the snippet
+" NERDTree : filesystem explorer with many capabilities, use ? or :h NERDTree
+" vim taglist : list vim tags in a pane using :TlistToggle
+" vim powerline : for beautiful vim status bar
+" vim airline : light weight powerline replacement for vim status line
+" Vundle : vim package manager
+" YouCompleteMe : C-lang auto text completion

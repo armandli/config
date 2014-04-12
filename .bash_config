@@ -5,6 +5,7 @@ shopt -s histappend
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 #CONFIG: set custom PATH
+PATH=$HOME/bin:$PATH
 
 # set terminal prompt
 #PS1="\e[0;35m\h:\W \u|\$?\$ \e[m"
@@ -20,13 +21,16 @@ PS1="\h:\W|\${?##0}\$ "
 # Brown 0;33
 # NOTE: change background, use \e[<COLOR>m and \e[0m
 
+# optional powerline bash command prompt setup
+#function _update_ps1() {
+#  export PS1="$(~/powerline-shell.py --cwd-only --colorize-hostname $? 2> /dev/null)"
+#}
+#export PROMPT_COMMAND="_update_ps1 ; $PROMPT_COMMAND"
+
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
 #allow cd <file> <cmd>
 [[ -f ~/bin/cd.sh ]] && . ~/bin/cd.sh
-
-#allow ssh host autocomplete
-[[ -f ~/bin/ssh_autoc ]] && . ~/bin/ssh_autoc
 
 #allow ssh host autocomplete
 [[ -f ~/bin/ssh_autoc ]] && . ~/bin/ssh_autoc

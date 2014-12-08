@@ -37,6 +37,11 @@ ca Q q
 vnoremap < <gv
 vnoremap > >gv
 
+"set vim with relative line number
+"set relativenumber
+"autocmd InsertEnter * :set number
+"autocmd InsertLeave * :set relativenumber
+
 """tabbing friendly commands"""
 "map <C-l> <Esc>:tabn<cr>
 "map <C-h> <Esc>:tabp<cr>

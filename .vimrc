@@ -114,8 +114,11 @@ set laststatus=2
 "  \ [ 'x', 'y', 'z' ]
 "  \ ]
 "let g:airline#extensions#default#section_truncate_width = {}
+"let g:airline_section_b = '%{CurDir()}'
+"let g:airline_section_x = '%Y'
 "let g:airline_section_y = '0x%02.2B'
 "let g:airline_theme='bubblegum'
+
 
 """ enable/disable NERDTree """
 "nmap <F6> :NERDTree<CR>
@@ -133,12 +136,16 @@ set laststatus=2
 "Plugin 'gmarik/vundle'
 ""other plugins
 "Plugin 'bling/vim-airline'
-""Plugin 'Valloric/YouCompleteMe'
+"Plugin 'bkad/CamelCaseMotion'
+"Plugin 'vim-scripts/argtextobj.vim'
+"Plugin 'kana/vim-textobj-user'
 "filetype plugin indent on
 
 """"" Reminders on must-have vim plugins """""
 " vim-a     : quick switcher between source and header file using :AS :AV
 " vim-align : automatically align lines based on character, e.g. :1,2Align =
+" argtextobj : add special motion for function parameter text objects
+" CamelCaseMotion : special motion for camel case text
 " vim mini-buffer explorer : :BufExplorer or :BufExplorerVerticalSplit
 " vim surround : switch surrounding of text with different character, e.g.
 "                cs'<q> -> change surrounding charater from ' to <q>
@@ -149,6 +156,7 @@ set laststatus=2
 " vim snippet : generates snippet code with keyword + <tab> + <c-j> for
 "               switching between components of the snippet
 " NERDTree : filesystem explorer with many capabilities, use ? or :h NERDTree
+" vim-textobj-user : allow user to define custom text objects
 " vim taglist : list vim tags in a pane using :TlistToggle
 " vim powerline : for beautiful vim status bar
 " vim airline : light weight powerline replacement for vim status line

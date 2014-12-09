@@ -33,6 +33,15 @@ ca Q q
 "set vim to current file's working directory
 "map <C-y> <Esc>:cd %:p:h<cr>
 
+" make code formatting shift operation keep block selection
+vnoremap < <gv
+vnoremap > >gv
+
+"set vim with relative line number
+"set relativenumber
+"autocmd InsertEnter * :set number
+"autocmd InsertLeave * :set relativenumber
+
 """tabbing friendly commands"""
 "map <C-l> <Esc>:tabn<cr>
 "map <C-h> <Esc>:tabp<cr>

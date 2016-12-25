@@ -1,3 +1,6 @@
+#set VI style bash
+set -o vi
+
 #append to history file, not overwrite it
 shopt -s histappend
 
@@ -5,7 +8,7 @@ shopt -s histappend
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 #CONFIG: set custom PATH
-PATH=$HOME/bin:$PATH
+PATH=$HOME/bin:$HOME/.cargo/bin:$PATH
 
 # set terminal prompt
 #PS1="\e[0;35m\h:\W \u|\$?\$ \e[m"
@@ -36,3 +39,8 @@ PS1="\h:\W|\${?##0}\$ "
 [[ -f ~/bin/ssh_autoc ]] && . ~/bin/ssh_autoc
 
 export EDITOR=vim
+
+#spark configuration
+export SPARK_HOME=/usr/share/apache-spark
+
+export CARGO_BLAS=cblas

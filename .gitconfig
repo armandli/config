@@ -1,0 +1,13 @@
+[user]
+	name = armandli
+	email = armand.li@hotmail.com
+[credential]
+	helper = cache
+[alias]
+	co = checkout
+	up = pull
+	stat = status
+	unstage = reset HEAD --
+	last = log -l HEAD
+	br = branch
+	ci = commit

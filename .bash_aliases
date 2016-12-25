@@ -15,3 +15,6 @@ alias clang++11='clang++ --std=gnu++11'
 
 #mac specific aliases
 #alias sed="/usr/local/bin/gsed"
+
+#tmux alias
+alias ta='tmux attach -t'

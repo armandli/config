@@ -41,6 +41,9 @@ PS1="[\$(date +%k:%M)]\h:\W|\${?##0}\$ "
 #include hub bash completion
 #[[ -f ~/.hub_bash_completion.sh ]] && . ~/.hub_bash_completion.sh
 
+#include FZF fuzzy file finder
+[ -f ~/.fzf.bash ] && . ~/.fzf.bash
+
 export EDITOR=vim
 
 #spark configuration

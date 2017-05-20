@@ -140,15 +140,22 @@ set laststatus=2
 
 """ Vundle setup """
 "filetype off
-"set rtp+=~/.vim/bundle/vundle/
-"call vundle#rc()
-"Plugin 'gmarik/vundle'
-""other plugins
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+"Plugin 'VundleVim/Vundle.vim'
 "Plugin 'bling/vim-airline'
 "Plugin 'bkad/CamelCaseMotion'
 "Plugin 'vim-scripts/argtextobj.vim'
 "Plugin 'kana/vim-textobj-user'
-"filetype plugin indent on
+"Plugin 'derekwyatt/vim-scala'
+"Plugin 'rust-lang/rust.vim'
+"Plugin 'mattn/webapi-vim'
+"Plugin 'tpope/vim-surround'
+"Plugin 'junegunn/fzf'
+"Bundle 'edkolev/tmuxline.vim'
+"call vundle#end()            " required
+"filetype plugin indent on    " required
+"
 
 """"" Reminders on must-have vim plugins """""
 " vim-a     : quick switcher between source and header file using :AS :AV

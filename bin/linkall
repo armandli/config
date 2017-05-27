@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Symbolically link all source C++ source files and makefiles from one directory to another
+
+[[ $# -ne 1 ]] && echo "Usage: `basename $0` [src dir]" && exit 1
+[[ ! -d $1 ]] && echo "Src must be a directory!" && exit 1
+
+ALLSRC=`find $1 -name "*[h|hpp|c|cpp]"`
+MAKEFILE=`find $1 -name "*akefile"`
+
+echo "$ALLSRC" | xargs -I{} ln -sf {} .
+echo "$MAKEFILE" | xargs -I{} ln -sf {} .

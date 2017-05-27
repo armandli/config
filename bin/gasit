@@ -1,0 +1,9 @@
+#!/bin/sh
+
+[[ $# -ne 1 ]] && echo "Usage: `basename $0` <file.s>" && exit 1
+
+FILENAME=$1
+
+gcc -nostdlib $1
+[[ $? -ne 0 ]] && echo "Error Encountered; Image Generation Failed" && exit 1
+objdump -d -M intel a.out

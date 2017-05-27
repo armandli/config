@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]]; then
+  echo "Usage: `basename $0` file"
+  exit 1
+fi
+
+FILE=$1
+
+ruby -e "require 'yaml';puts YAML.load_file('$1')"

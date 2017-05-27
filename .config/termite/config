@@ -1,0 +1,47 @@
+[options]
+font = Monospace 11
+scrollback_lines = 100000
+full_screen = true
+dynamic_title = true
+allow_bold = true
+mouse_autohide = true
+
+[colors]
+# special
+foreground      = #c8c5ca
+foreground_bold = #c8c5ca
+cursor          = #c8c5ca
+background      = #121013
+background      = rgba(33, 33, 33, 0.93)
+
+# black
+color0  = #1d1b1e
+color8  = #e2a957
+
+# red
+color1  = #262327
+color9  = #44ecd0
+
+# green
+color2  = #373439
+color10 = #b9dcf3
+
+# yellow
+color3  = #4f4b52
+color11 = #67b7e0
+
+# blue
+color4  = #6d6871
+color12 = #9ee23a
+
+# magenta
+color5  = #908a93
+color13 = #9bd15a
+
+# cyan
+color6  = #b7b3b9
+color14 = #86b058
+
+# white
+color7  = #e3e2e4
+color15 = #a5e05c

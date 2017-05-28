@@ -1,3 +1,4 @@
+
 #set VI style bash
 set -o vi
 
@@ -24,11 +25,13 @@ PS1="[\$(date +%k:%M)]\h:\W|\${?##0}\$ "
 # Brown 0;33
 # NOTE: change background, use \e[<COLOR>m and \e[0m
 
-# optional powerline bash command prompt setup
-#function _update_ps1() {
-#  export PS1="$(~/powerline-shell.py --cwd-only --colorize-hostname $? 2> /dev/null)"
-#}
-#export PROMPT_COMMAND="_update_ps1 ; $PROMPT_COMMAND"
+#include powerline if exists
+#powerline-daemon -q
+#POWERLINE_BASH_CONTINUATION=1
+#POWERLINE_BASH_SELECT=1
+#POWERLINE_CONFIG_PATHS=/home/armandli/.config/powerline/config_files
+#POWERLINE_COMMAND_ARGUMENTS="-p ${HOME}/config/powerline/config_files"
+#[[ -f /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh ]] && . /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
 
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
@@ -39,14 +42,16 @@ PS1="[\$(date +%k:%M)]\h:\W|\${?##0}\$ "
 [[ -f ~/bin/ssh_autoc ]] && . ~/bin/ssh_autoc
 
 #include hub bash completion
-#[[ -f ~/.hub_bash_completion.sh ]] && . ~/.hub_bash_completion.sh
+[[ -f ~/.hub_bash_completion.sh ]] && . ~/.hub_bash_completion.sh
 
 #include FZF fuzzy file finder
 [ -f ~/.fzf.bash ] && . ~/.fzf.bash
-
-export EDITOR=vim
+[[ -f /usr/share/fzf/key-bindings.bash ]] && . /usr/share/fzf/key-bindings.bash
+[[ -f /usr/share/fzf/completion.bash ]] && . /usr/share/fzf/completion.bash
 
 #spark configuration
 export SPARK_HOME=/usr/share/apache-spark
 
 export CARGO_BLAS=cblas
+
+export EDITOR=vim

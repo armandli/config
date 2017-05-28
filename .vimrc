@@ -52,6 +52,9 @@ vnoremap > >gv
 "map <C-i> <Esc>:tn<cr>
 "map <C-o> <Esc>:tp<cr>
 
+"bind <C-f> to fuzzy finder
+"map <C-f> <Esc>:FZF<cr>
+
 """display preference"""
 set bg=dark                      "dark background
 "colorscheme relaxedgreen         "set vim theme NOTE: need to download additional theme

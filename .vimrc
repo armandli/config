@@ -150,11 +150,18 @@ set laststatus=2
 "Plugin 'bkad/CamelCaseMotion'
 "Plugin 'vim-scripts/argtextobj.vim'
 "Plugin 'kana/vim-textobj-user'
-"Plugin 'derekwyatt/vim-scala'
-"Plugin 'rust-lang/rust.vim'
 "Plugin 'mattn/webapi-vim'
 "Plugin 'tpope/vim-surround'
 "Plugin 'junegunn/fzf'
+"Plugin 'Valloric/YouCompleteMe'
+""Additional language syntax highlights
+"Plugin 'rust-lang/rust.vim'
+"Plugin 'derekwyatt/vim-scala'
+""Java IDE plugins
+"Plugin 'SirVer/ultisnips'
+"Plugin 'ervandew/eclim'
+"Plugin 'Raimondi/delimitMate'
+"PLugin 'airblade/vim-rooter'
 "Bundle 'edkolev/tmuxline.vim'
 "call vundle#end()            " required
 "filetype plugin indent on    " required

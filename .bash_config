@@ -11,9 +11,13 @@ shopt -s histappend
 #CONFIG: set custom PATH
 PATH=$HOME/bin:$HOME/.cargo/bin:$PATH
 
+parse_git_branch(){
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
 # set terminal prompt
 #PS1="\e[0;35m\h:\W \u|\$?\$ \e[m"
-PS1="[\$(date +%k:%M)]\h:\W|\${?##0}\$ "
+PS1="\${?##0}|\W[\$(date +%k:%M)]\$(parse_git_branch)\[\033[00m\]\$ "
 #PS1="\h:\W \u|$?\$ "
 # PS1 COLOR GUIDE:
 # Black 0;30

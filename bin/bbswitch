@@ -1,0 +1,17 @@
+#!/bin/sh
+
+COMMAND=$1
+
+if   [ "$COMMAND" == "stat" ]; then
+  cat /proc/acpi/bbswitch
+elif [ "$COMMAND" == "on" ]; then
+  tee /proc/acpi/bbswitch <<<ON
+  cat /proc/acpi/bbswitch
+elif [ "$COMMAND" == "off" ]; then
+  tee /proc/acpi/bbswitch <<<OFF
+  cat /proc/acpi/bbswitch
+elif [ "$COMMAND" == "help" ]; then
+  echo "Usage: `basename $0` <on/off/stat>"
+else
+  cat /proc/acpi/bbswitch
+fi

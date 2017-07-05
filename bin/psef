@@ -1,0 +1,9 @@
+#!/bin/sh
+
+PAT=$1
+
+if [ "$PAT" == "" ]; then
+  ps -ef
+else
+  ps -ef | tail -n +2 | grep -v "psef $PAT" | grep -v "grep -i $PAT" | grep -i "$PAT"
+fi

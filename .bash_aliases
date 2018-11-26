@@ -10,8 +10,12 @@ alias psu="ps -ef | grep $WHOAMI"
 alias grep='grep --color=tty -d skip'
 
 #c++11 by default
-alias g++11='g++ --std=gnu++11'
-alias clang++11='clang++ --std=gnu++11'
+alias g++11='g++ --std=c++11'
+alias g++14='g++ --std=c++14'
+alias g++17='g++ --std=c++17'
+alias clang++11='clang++ --std=c++11'
+alias clang++14='clang++ --std=c++14'
+alias clang++17='clang++ --std=c++17'
 
 #mac specific aliases
 #alias sed="/usr/local/bin/gsed"

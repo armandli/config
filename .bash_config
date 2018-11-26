@@ -54,8 +54,17 @@ PS1="\${?##0}|\W[\$(date +%k:%M)]\$(parse_git_branch)\[\033[00m\]\$ "
 [[ -f /usr/share/fzf/completion.bash ]] && . /usr/share/fzf/completion.bash
 
 #spark configuration
-export SPARK_HOME=/usr/share/apache-spark
+#export SPARK_HOME=/usr/share/apache-spark
 
 export CARGO_BLAS=cblas
 
 export EDITOR=vim
+
+#NNN setup (terminal filesystem browser)
+export NNN_USER_EDITOR=1
+export NNN_QUOTE_ON=1
+export NNN_COPIER='/home/armandli/bin/nnn_copier.sh'
+export NNN_BMS='/home/armandli/Downloads;/home/armandli/code;/home/armandli/repo'
+
+#adding custom runtime library
+LD_LIBRARY_PATH=/opt/clblast/lib:/opt/clblas/lib64

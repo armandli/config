@@ -1,5 +1,8 @@
 " favorite default settings "
 set wrap                         "wrap lines
+set wrapmargin=2                 "number of characters that are vacated between
+                                 "linebreak and right edge
+set linebreak                    "wrap linebreak does not occur on symbols
 set tabstop=2                    "default indentation = 2
 set expandtab                    "use space instead of tabs for indentation
 set number                       "show line number on the left
@@ -7,18 +10,25 @@ set showmatch                    "show matching braces
 set showcmd                      "show visual command selection
 set nocompatible                 "use non-compatible features
 set wildmenu                     "enhance command line completion
-set backspace=indent,eol,start   "backspace can go back to previous line, this may not
+set wildmode=longest:list,full   "first tab autocomplete command, second tab
+                                 "each instruction will be selected in turn
+set backspace=indent,eol,start   "backspace can go back to previous line, this
+                                 "may not
                                  "always be a good idea when editing large
                                  "files
 set wildchar=<Tab>               "expand command line using tab
 set splitbelow                   "more natural horizontal split
 set splitright                   "more natural vertical split
-set history=100                  "remember previous 100 commands
+set history=1000                 "remember previous 1000 commands
 set undolevels=50                "set maximum number of undos
 set autoread                     "automatically read updates from other editor editing
                                  "the same file
 set autowrite                    "auto write before quitting the buffer
 syntax on                        "always have syntax highlight
+set clipboard=unnamed
+set mouse=a                      "enable mouse mode
+set autochdir                    "switch working directory automatically to
+                                 "directory of the file being edited
 
 """useful command mappings"""
 "disable writing to file named 1 by mapping w1 to w!, which is forced save
@@ -96,6 +106,12 @@ set t_vb=
 set tm=500
 autocmd GUIEnter * set visualbell t_vb=
 
+"""Python flagging unnecessary white space
+au BufRead,BufNewFile *.c, *.h, *.cpp match BadWhitespace /\s\+$/
+
+"""Disable folding for markdown
+set nofoldenable
+
 """setting the old status line for vim"""
 " return current working directory
 function! CurDir()
@@ -143,7 +159,7 @@ set laststatus=2
 
 """ Vundle setup """
 "filetype off
-"set rtp+=~/.vim/bundle/Vundle.vim
+"set rtp+=/usr/share/vim/vimfiles/autoload/vundle.vim
 "call vundle#begin()
 "Plugin 'VundleVim/Vundle.vim'
 "Plugin 'bling/vim-airline'
@@ -154,18 +170,31 @@ set laststatus=2
 "Plugin 'tpope/vim-surround'
 "Plugin 'junegunn/fzf'
 "Plugin 'Valloric/YouCompleteMe'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'tpope/vim-fugitive'
 ""Additional language syntax highlights
-"Plugin 'rust-lang/rust.vim'
 "Plugin 'derekwyatt/vim-scala'
+"Plugin 'rust-lang/rust.vim'
+"Plugin 'petRUShka/vim-opencl'
+""Markdown
+"Plugin 'godlygeek/tabular'
+"Plugin 'plasticboy/vim-markdown'
 ""Java IDE plugins
 "Plugin 'SirVer/ultisnips'
 "Plugin 'ervandew/eclim'
 "Plugin 'Raimondi/delimitMate'
-"PLugin 'airblade/vim-rooter'
+"Plugin 'airblade/vim-rooter'
+""Color Schemes
+"Plugin 'KabbAmine/yowish.vim'
+"Plugin 'nanotech/jellybeans.vim'
+""Directory explorer/Fuzzy Finder
+"Plugin 'Shougo/unite.vim'
+"Plugin 'kien/ctrlp.vim'
+""Cheat sheet
+"Plugin 'dbeniamine/cheat.sh-vim'
 "Bundle 'edkolev/tmuxline.vim'
-"call vundle#end()            " required
-"filetype plugin indent on    " required
-"
+"call vundle#end()
+"filetype plugin indent on
 
 """"" Reminders on must-have vim plugins """""
 " vim-a     : quick switcher between source and header file using :AS :AV

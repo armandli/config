@@ -4,7 +4,7 @@ alias cd-="cd -"
 alias ll="ls -al"
 
 #easy ps
-alias psu="ps -ef | grep $WHOAMI"
+alias psu="ps -ef | grep `whoami`"
 
 #grep with colour
 alias grep='grep --color=tty -d skip'
@@ -22,3 +22,14 @@ alias clang++17='clang++ --std=c++17'
 
 #tmux alias
 alias ta='tmux attach -t'
+
+#replace ls with exa
+if [[ -f "/usr/bin/exa" ]]; then
+  alias ls=/usr/bin/exa
+fi
+
+#replace cat with bat
+if [[ -f "/usr/bin/bat" ]]; then
+  alias cat=/usr/bin/bat
+fi
+

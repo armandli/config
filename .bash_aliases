@@ -33,3 +33,5 @@ if [[ -f "/usr/bin/bat" ]]; then
   alias cat=/usr/bin/bat
 fi
 
+#kubernetes shortcuts
+[[ -f "${HOME}/.kubectl_aliases"]] && . ~/.kubectl_aliases

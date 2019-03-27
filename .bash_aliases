@@ -7,7 +7,7 @@ alias ll="ls -al"
 alias psu="ps -ef | grep `whoami`"
 
 #grep with colour
-alias grep='grep --color=tty -d skip'
+alias grep='rg --color=auto'
 
 #c++11 by default
 alias g++11='g++ --std=c++11'
@@ -33,5 +33,12 @@ if [[ -f "/usr/bin/bat" ]]; then
   alias cat=/usr/bin/bat
 fi
 
+#rename nvim vi
+if [[ -f "/usr/bin/nvim" ]]; then
+  alias vi=/usr/bin/nvim
+fi
+
 #kubernetes shortcuts
-[[ -f "${HOME}/.kubectl_aliases"]] && . ~/.kubectl_aliases
+#if [[ -f "${HOME}/.kubectl_aliases" ]]; then
+#  source ${HOME}/.kubectl_aliases
+#fi

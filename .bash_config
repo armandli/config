@@ -2,6 +2,27 @@
 #set VI style bash
 set -o vi
 
+#autofix spelling error in cd
+shopt -s cdspell
+
+#move to folder if the command doesn't exist
+#shopt -s autocd
+
+#perform any expansions of variables, tildes in the command line using tab
+shopt -s direxpand
+
+#prevent shell from exit when jobs are running in the background
+shopt -s checkjobs
+
+#recursively glob all folders and subfolders
+#shopt -s globstar
+
+#allow regular expression in ls globbing
+shopt -s extglob
+
+#see how bash interpret the command before doing !! and !$
+shopt -s histverify
+
 #append to history file, not overwrite it
 shopt -s histappend
 
@@ -10,6 +31,12 @@ shopt -s histappend
 
 #CONFIG: set custom PATH
 PATH=$HOME/bin:$HOME/.cargo/bin:$PATH
+
+#CONFIG: default location for cd
+CDPATH=.
+
+#history display time command is run
+HISTTIMEFORMAT='%m/%d %T: '
 
 parse_git_branch(){
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'

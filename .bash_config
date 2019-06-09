@@ -26,6 +26,22 @@ shopt -s histverify
 #append to history file, not overwrite it
 shopt -s histappend
 
+#make history easier to parse
+shopt -s cmdhist
+
+#history display time command is run
+HISTTIMEFORMAT='%m/%d %T: '
+
+#increase history size
+HISTFILESIZE=100000
+HISTSIZE=100000
+
+#prevent commands start with space and duplicate commands go into history
+HISTCONTROL=ignoreboth
+
+#explicitly ignore a set of commands for history
+HISTIGNORE='ls:bg:fg:history'
+
 #make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -34,9 +50,6 @@ PATH=$HOME/bin:$HOME/.cargo/bin:$PATH
 
 #CONFIG: default location for cd
 CDPATH=.
-
-#history display time command is run
-HISTTIMEFORMAT='%m/%d %T: '
 
 parse_git_branch(){
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'

@@ -83,6 +83,11 @@ set nofoldenable
 
 """ plugin installation
 call plug#begin()
+Plug 'tpope/vim-sensible'
+Plug 'tmhedberg/matchit'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'bkad/CamelCaseMotion'
 Plug 'ncm2/ncm2'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
@@ -96,10 +101,17 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'cloudhead/neovim-fuzzy'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'rust-lang/rust.vim'
+Plug 'derekwyatt/vim-scala'
+Plug 'petRUShka/vim-opencl'
 Plug 'tmhedberg/SimpylFold'
 Plug 'Konfekt/FastFold'
 Plug 'Shougo/vimshell.vim'
+Plug 'airblade/vim-rooter'
+Plug 'kien/ctrlp.vim'
+Plug 'thaerkh/vim-workspace'
 call plug#end()
 
 """airline setup

@@ -160,17 +160,20 @@ set laststatus=2
 
 """ Vundle setup """
 "filetype off
-"set rtp+=/usr/share/vim/vimfiles/autoload/vundle.vim
+"set rtp+=~/.vim/bundle/Vundle.vim
 "call vundle#begin()
 "Plugin 'VundleVim/Vundle.vim'
+"Plugin 'tpope/vim-sensible'
+"Plugin 'tmhedberg/matchit'
+"Plugin 'tpope/vim-repeat'
+"Plugin 'tpope/vim-surround'
 "Plugin 'bling/vim-airline'
 "Plugin 'bkad/CamelCaseMotion'
 "Plugin 'vim-scripts/argtextobj.vim'
 "Plugin 'kana/vim-textobj-user'
 "Plugin 'mattn/webapi-vim'
-"Plugin 'tpope/vim-surround'
 "Plugin 'junegunn/fzf'
-"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'vim-scripts/VimCompletesMe'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'tpope/vim-fugitive'
 ""Additional language syntax highlights
@@ -193,6 +196,9 @@ set laststatus=2
 "Plugin 'kien/ctrlp.vim'
 ""Cheat sheet
 "Plugin 'dbeniamine/cheat.sh-vim'
+"Plugin 'thaerkh/vim-workspace'
+"Plugin 'tpope/vim-obsession'
+"Plugin 'jreybert/vimagit'
 "Bundle 'edkolev/tmuxline.vim'
 "call vundle#end()
 "filetype plugin indent on

@@ -1,4 +1,5 @@
 " favorite default settings "
+set secure                       "enable modeline for security
 set wrap                         "wrap lines
 set wrapmargin=2                 "number of characters that are vacated between
                                  "linebreak and right edge

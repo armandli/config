@@ -203,6 +203,11 @@ set laststatus=2
 "call vundle#end()
 "filetype plugin indent on
 
+""Vim Workspace Configuration
+"nnoremap <leader>s :ToggleWorkspace<CR>
+"let g:workspace_autosave_always = 1
+"let g:workspace_session_name = '.Session.vim'
+
 """"" Reminders on must-have vim plugins """""
 " vim-a     : quick switcher between source and header file using :AS :AV
 " vim-align : automatically align lines based on character, e.g. :1,2Align =

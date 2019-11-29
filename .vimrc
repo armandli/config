@@ -1,10 +1,12 @@
 " favorite default settings "
+set exrc                         "source .vimrc from working directory
 set secure                       "disable modeline for security
 set wrap                         "wrap lines
 set wrapmargin=2                 "number of characters that are vacated between
                                  "linebreak and right edge
 set linebreak                    "wrap linebreak does not occur on symbols
 set tabstop=2                    "default indentation = 2
+set softtabstop=2                "soft tabstop to 2
 set expandtab                    "use space instead of tabs for indentation
 set number                       "show line number on the left
 set showmatch                    "show matching braces
@@ -107,6 +109,17 @@ set t_vb=
 set tm=500
 autocmd GUIEnter * set visualbell t_vb=
 
+"""setup search path for gf command"""
+"let &path.=""
+"set includeexpr=substitute(v:fname,'\\.','/','g')
+
+"""setup build system"""
+set makeprg=make\ -j9
+nnoremap <F4> :make!<cr>
+
+"""setup launch system"""
+"nnoremap <F3> :!./program<cr>
+
 """Python flagging unnecessary white space
 au BufRead,BufNewFile *.c, *.h, *.cpp match BadWhitespace /\s\+$/
 
@@ -176,6 +189,8 @@ set laststatus=2
 "Plugin 'vim-scripts/VimCompletesMe'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'tpope/vim-fugitive'
+""Filesystem Manager
+"Plugin 'scrooloose/nerdtree'
 ""Additional language syntax highlights
 "Plugin 'derekwyatt/vim-scala'
 "Plugin 'rust-lang/rust.vim'

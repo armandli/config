@@ -33,6 +33,26 @@ if [[ -f "/usr/bin/bat" ]]; then
   alias cat=/usr/bin/bat
 fi
 
+#replace du with dust
+if [[ -f '/usr/bin/dust' ]]; then
+  alias du=/usr/bin/dust
+fi
+
+#replace bc with eva
+if [[ -f '/usr/bin/eva' ]]; then
+  alias bc=/usr/bin/eva
+fi
+
+#replace find with fd
+if [[ -f '/usr/bin/fd' ]]; then
+  alias find=/usr/bin/fd
+fi
+
+#replace od with hexyl
+if [[ -f '/usr/bin/hexyl' ]]; then
+  alias od=/usr/bin/hexyl
+fi
+
 #rename nvim vi
 if [[ -f "/usr/bin/nvim" ]]; then
   alias vi=/usr/bin/nvim

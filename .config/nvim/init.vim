@@ -112,6 +112,15 @@ Plug 'Shougo/vimshell.vim'
 Plug 'airblade/vim-rooter'
 Plug 'kien/ctrlp.vim'
 Plug 'thaerkh/vim-workspace'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'airblade/vim-gitgutter'
+" Filesystem Manager
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+" Themes
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 """airline setup
@@ -180,3 +189,16 @@ let g:airline_section_x = '%Y'
 let g:airline_section_y = '0x%02.2B'
 let g:airline_theme='bubblegum'
 
+" Nerdtree configuration
+" TODO
+"map <C-n> :NERDTreeToggle<CR>
+"let g:NERDTreeChDirMode=2
+"let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__', 'node_modules']
+"let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
+"let g:NERDTreeShowBookmarks=1
+"let g:nerdtree_tabs_focus_on_files=1
+"let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
+"set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
+
+" Fuzzy Finder Config
+let g:ctrlp_user_command=['.git/','git --git-dir=%s/.git ls-files -oc --exclude-standard']

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [[ $# -ne 1 ]]; then
+  echo "Usage: `basename $0` <output_svg>"
+  exit 1
+fi
+
+FILENAME=$1
+
+perf script | stackcollapse-perf.pl | flamegraph.pl > $FILENAME

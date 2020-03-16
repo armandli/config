@@ -1,16 +1,17 @@
 [user]
-	name = armandli
-	email = armand.li@hotmail.com
+  name = armandli
+  email = armand.li@hotmail.com
 [credential]
-	helper = cache --timeout=3600
+  helper = cache --timeout=3600
 [alias]
-	co = checkout
-	up = pull
-	stat = status
-	unstage = reset HEAD --
-	last = log -l HEAD
-	br = branch
-	ci = commit
+  bran = branch
+  co = checkout
+  up = pull
+  stat = status
+  unstage = reset HEAD --
+  last = log -l HEAD
+  br = branch
+  ci = commit
   squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
   mpr = "!f() { \
           declare currentBranch=\"$(git symbolic-ref --short HEAD)\"; \

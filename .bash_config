@@ -29,6 +29,9 @@ shopt -s histappend
 #make history easier to parse
 shopt -s cmdhist
 
+#change history file to make sure it's not truncated
+HISTFILE=${HOME}/.history
+
 #history display time command is run
 HISTTIMEFORMAT='%m/%d %T: '
 
@@ -41,6 +44,9 @@ HISTCONTROL=ignoreboth
 
 #explicitly ignore a set of commands for history
 HISTIGNORE='ls:bg:fg:history'
+
+#flush command to history file immediately so we don't lose anything when shell exits
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 #make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"

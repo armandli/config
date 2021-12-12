@@ -2,7 +2,7 @@
   name = armandli
   email = armand.li@hotmail.com
 [credential]
-  helper = cache --timeout=3600
+	helper = cache
 [alias]
   bran = branch
   co = checkout

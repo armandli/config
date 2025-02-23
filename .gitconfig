@@ -1,6 +1,6 @@
 [user]
-  name = armandli
-  email = armand.li@hotmail.com
+	name = Armand \"Walrus\" Li
+	email = adarcorerlreth@gmail.com
 [credential]
 	helper = cache
 [alias]
@@ -8,6 +8,7 @@
   co = checkout
   up = pull
   stat = status
+  logg = git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   unstage = reset HEAD --
   last = log -l HEAD
   br = branch
@@ -34,6 +35,21 @@
   aliases = config --get-regexp alias
   git = !exec git
 [pager]
-    log  = /home/armandli/.cargo/bin/diffr | less
-    show = /home/armandli/.cargo/bin/diffr | less
-    diff = /home/armandli/.cargo/bin/diffr | less
+    log  = diffr | less
+    show = diffr | less
+    diff = diffr | less
+[core]
+	excludesfile = /Users/armandli/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Users/armandli/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/armandli/.stCommitMsg
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

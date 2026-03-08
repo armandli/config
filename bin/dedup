@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+DIR="$1"
+
+if [ -z "$DIR" ]; then
+    echo "Usage: dedup <directory>" >&2
+    exit 1
+fi
+
+if [ ! -d "$DIR" ]; then
+    echo "Error: '$DIR' is not a directory" >&2
+    exit 1
+fi
+
+find "$DIR" -maxdepth 1 -type f -name "*(1).*" | while read -r dup_file; do
+    filename=$(basename "$dup_file")
+    base_filename="${filename/\(1\)/}"
+    base_file="$DIR/$base_filename"
+
+    if [ -f "$base_file" ]; then
+        rm "$base_file"
+        mv "$dup_file" "$base_file"
+        echo "Replaced: $base_filename"
+    fi
+done

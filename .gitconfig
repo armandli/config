@@ -2,7 +2,7 @@
 	name = Armand \"Walrus\" Li
 	email = adarcorerlreth@gmail.com
 [credential]
-	helper = cache
+	helper = store
 [alias]
   bran = branch
   co = checkout
